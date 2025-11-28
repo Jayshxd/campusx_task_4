@@ -7,3 +7,11 @@ order by sold desc
 limit 5;
 
 
+-- Find sales man who sold most no of products.
+select t1.FirstName , t2.SalesPersonID as id,count(*) as 'sold' from employees as t1
+join sales as t2
+on t1.EmployeeID = t2.SalesPersonID
+group by SalesPersonID,t1.FirstName
+order by sold desc
+limit 1
+
