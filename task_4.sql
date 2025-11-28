@@ -25,3 +25,8 @@ having purchases >10
 order by purchases desc
 
 
+-- List all salespeople who have made sales to more than 5 customers.
+select sales.SalesPersonID,count(distinct sales.CustomerID) as 'c'
+from sales
+group by SalesPersonID
+having c>4
